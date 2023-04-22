@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-
+#include <main.h>
 /**
  * _printf - custom printf function
  * @format: format string
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
             if (*format == 'c')
             {
                 c = va_arg(args, int);
-                putchar(c);
+                i_putchar(c);
                 format++;
                 count++;
             }
@@ -34,17 +34,18 @@ int _printf(const char *format, ...)
                 s = va_arg(args, char *);
                 while (*s != '\0')
                 {
-                    putchar(*s);
+                    _putchar(*s);
                     s++;
                     count++;
                 }
             }
         }
 
-        putchar(*format);
+        _putchar(*format);
         format++;
         count++;
     }
     va_end(args);
     return (count);
 }
+

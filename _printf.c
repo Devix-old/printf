@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
     int c, count;
     char *s;
     va_list args;
+    count = 0;
 
     va_start(args, format);
 

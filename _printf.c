@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <unistd.h>
 #include "main.h"
 /**
  * _printf - Custom printf function
@@ -21,7 +22,7 @@ format++;
 if (*format == 'c')
 {
 c = va_arg(args, int);
-_putchar(c);
+write(1, &c, 1);
 format++;
 count++;
 }
@@ -31,17 +32,16 @@ format++;
 s = va_arg(args, char *);
 while (*s != '\0')
 {
-_putchar(*s);
+write(1, s, 1);
 s++;
 count++;
 }
 }
 }
-_putchar(*format);
+write(1, format, 1);
 format++;
 count++;
 }
 va_end(args);
 return (count);
 }
-

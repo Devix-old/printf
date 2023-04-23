@@ -26,7 +26,7 @@ format++;
 if (*format == 'c')
 {
 c = va_arg(args, int);
-_putchar(c);  
+_putchar(c);
 format++;
 count++;
 }
@@ -36,7 +36,7 @@ format++;
 s = va_arg(args, char *);
 while (*s != '\0')
 {
-_putchar(*s); 
+_putchar(*s);
 s++;
 count++;
 }

@@ -11,7 +11,7 @@
  */
 void print_percent(va_list args, int *count)
 {
-  (void)args; // Unused parameter
+  (void)args;
   _putchar('%');
   (*count)++;
 }

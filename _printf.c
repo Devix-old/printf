@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
-#include <stddef.h>
+#include <stdlib.h>
 /**
  * _printf - Custom printf function
  * @format: Format string
@@ -14,7 +14,6 @@ char *s;
 va_list args;
 count = 0;
 va_start(args, format);
-
 while (*format != '\0')
 {
 if (*format == '%')
@@ -23,10 +22,6 @@ format++;
 if (*format == 'c')
 {
 c = va_arg(args, int);
-if (c == NULL)
-{
-return (NULL);
-}
 _putchar(c);
 format++;
 count++;
@@ -37,13 +32,16 @@ format++;
 s = va_arg(args, char *);
 if (s == NULL)
 {
-return (NULL);
+write(1, "(null)", 6);
 }
+else
+{
 while (*s != '\0')
 {
 _putchar(*s);
 s++;
 count++;
+}
 }
 }
 }

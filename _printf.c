@@ -23,11 +23,6 @@ while (*format != '\0')
 if (*format == '%')
 {
 format++;
-if (*format == '%')
-{
-write(1, "%", 1);
-format++;
-}
 if (*format == 'c')
 {
 c = va_arg(args, int);

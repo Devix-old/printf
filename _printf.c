@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include "main.h"
+#include <string.h>
 
 /**
  * _printf - produces output according to a format
@@ -33,7 +34,7 @@ int _printf(const char *format, ...)
 					write_chars = write(1, &c, 1);
 					break;
 				case 's':
-					write_chars = write(1, va_arg(args, char *), _strlen(va_arg(args, char *)));
+					write_chars = write(1, va_arg(args, char *), strlen(va_arg(args, char *)));
 					break;
 				case '%':
 					c = '%';
@@ -63,24 +64,5 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	return (printed_chars);
-}
-
-/**
- * _strlen - computes the length of a string
- * @str: input string
- *
- * Return: length of the string
- */
-int _strlen(char *str)
-{
-	int len = 0;
-
-	if (str == NULL)
-		return (0);
-
-	while (str[len])
-		len++;
-
-	return (len);
 }
 

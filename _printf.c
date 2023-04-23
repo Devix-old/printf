@@ -13,6 +13,10 @@ char *s;
 va_list args;
 count = 0;
 va_start(args, format);
+if (format == NULL)
+{
+return (-1);
+}
 while (*format != '\0')
 {
 if (*format == '%')

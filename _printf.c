@@ -14,6 +14,7 @@ char *s;
 va_list args;
 count = 0;
 va_start(args, format);
+
 while (*format != '\0')
 {
 if (*format == '%')
@@ -22,6 +23,10 @@ format++;
 if (*format == 'c')
 {
 c = va_arg(args, int);
+if (c == NULL)
+{
+return (NULL);
+}
 _putchar(c);
 format++;
 count++;
@@ -30,6 +35,10 @@ if (*format == 's')
 {
 format++;
 s = va_arg(args, char *);
+if (s == NULL)
+{
+return (NULL);
+}
 while (*s != '\0')
 {
 _putchar(*s);

@@ -27,7 +27,6 @@ if (*format == '%')
 {
 write (1,"%",1);
 format++;
-count++;
 }
 if (*format == 'c')
 {

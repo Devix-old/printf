@@ -21,7 +21,7 @@ if (*format == '%')
 format++;
 if (*format == 'c')
 {
-c = va_arg(args, char);
+c = va_arg(args, int);
 _putchar(c);
 format++;
 count++;

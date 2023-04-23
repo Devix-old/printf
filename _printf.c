@@ -37,6 +37,7 @@ s++;
 count++;
 }
 }
+if (*s !=)
 }
 _putchar(*format);
 format++;

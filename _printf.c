@@ -25,7 +25,7 @@ if (*format == '%')
 format++;
 if (*format == '%')
 {
-write (1,"%",1);
+write(1, "%", 1);
 format++;
 }
 if (*format == 'c')

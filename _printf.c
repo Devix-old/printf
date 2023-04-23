@@ -16,7 +16,7 @@ count = 0;
 va_start(args, format);
 if (*format == NULL)
 {
-return (NULL);
+return (-1);
 }
 while (*format != '\0')
 {

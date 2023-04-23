@@ -3,17 +3,6 @@
 #include "main.h"
 
 /**
- * _putchar - writes a character to stdout
- * @c: character to print
- *
- * Return: On success 1, on error -1.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * _printf - produces output according to a format
  * @format: format string
  * @...: variable number of arguments
@@ -24,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int printed_chars = 0;
+	int write_chars = 0;
 	char c;
 
 	if (format == NULL)
@@ -40,27 +30,32 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					c = va_arg(args, int);
-					_putchar(c);
-					printed_chars++;
+					write_chars = write(1, &c, 1);
 					break;
 				case 's':
-					printed_chars += _print_str(va_arg(args, char *));
+					write_chars = write(1, va_arg(args, char *), _strlen(va_arg(args, char *)));
 					break;
 				case '%':
-					_putchar('%');
-					printed_chars++;
+					c = '%';
+					write_chars = write(1, &c, 1);
 					break;
 				default:
-					_putchar('%');
-					_putchar(*format);
-					printed_chars += 2;
+					c = '%';
+					write_chars = write(1, &c, 1);
+					c = *format;
+					write_chars += write(1, &c, 1);
 					break;
 			}
+			if (write_chars == -1)
+				return (-1);
+			printed_chars += write_chars;
 		}
 		else
 		{
-			_putchar(*format);
-			printed_chars++;
+			write_chars = write(1, format, 1);
+			if (write_chars == -1)
+				return (-1);
+			printed_chars += write_chars;
 		}
 		format++;
 	}
@@ -71,25 +66,21 @@ int _printf(const char *format, ...)
 }
 
 /**
- * _print_str - prints a string
- * @str: string to print
+ * _strlen - computes the length of a string
+ * @str: input string
  *
- * Return: number of characters printed
+ * Return: length of the string
  */
-int _print_str(char *str)
+int _strlen(char *str)
 {
-	int i;
+	int len = 0;
 
 	if (str == NULL)
-	{
-		str = "(null)";
-	}
+		return (0);
 
-	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);
-	}
+	while (str[len])
+		len++;
 
-	return (i);
+	return (len);
 }
 

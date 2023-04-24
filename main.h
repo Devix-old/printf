@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+void convert_to_binary(va_list args, int *count);
 void process_format(va_list args, const char **format, int *count);
 int _printf(const char *format, ...);
 int _putchar(char c);

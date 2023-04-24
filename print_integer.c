@@ -6,7 +6,7 @@
 * @count: pointer to the character count
 * Return: void
 */
-
+void print_integer(va_list args, int *count)
 {
 int n = va_arg(args, int);
 int i;

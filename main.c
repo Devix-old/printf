@@ -5,12 +5,11 @@
 Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
-
+#include "main.h"
 #include <stdio.h>
 #include <limits.h>
 int main()
 {
-    printf("%i",INT_MIN);
-
+_printf("%d", INT_MAX);
     return 0;
 }

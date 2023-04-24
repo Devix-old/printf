@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <limits.h>
 /**
 * print_integer - prints an integer
 * @args: list of arguments

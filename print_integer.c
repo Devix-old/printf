@@ -10,8 +10,8 @@ void print_integer(va_list args, int *count)
 {
 int n = va_arg(args, int);
 int i;
-char buffer[12];
-int len = 0;
+char buffer[0];
+int len = 12;
 if (n == 0)
 {
 buffer[len++] = '0';

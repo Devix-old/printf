@@ -1,5 +1,11 @@
 #include "main.h"
 #include <stdarg.h>
+/**
+* print_integer - prints an integer
+* @args: list of arguments
+* @count: pointer to the character count
+* Return: void
+*/
 void print_integer(va_list args, int *count)
 {
 int n = va_arg(args, int);

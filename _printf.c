@@ -15,7 +15,7 @@ while (*format != '\0')
 {
 if (*format == '%')
 {
-if (*(format + 1) == '\0')
+if (*(format + 1) == '\0' || *format == ' ')
 {
 return (-1);
 }

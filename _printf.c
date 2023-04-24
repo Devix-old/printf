@@ -24,12 +24,12 @@ if (*format == ' ')
 {
 while (*format == ' ')
 {
-if (*format++ == '\0'){
+if (*format++ == '\0')
+{
 return (-1);
 }
 }
 }
-
 process_format(args, &format, &count);
 }
 else

@@ -11,20 +11,19 @@
  */
 void print_string(va_list args, int *count)
 {
-  char *s = va_arg(args, char *);
-  if (s == NULL)
-  {
-    write(1, "(null)", 6);
-    *count += 6;
-  }
-  else
-  {
-    while (*s != '\0')
-    {
-      _putchar(*s);
-      s++;
-      (*count)++;
-    }
-  }
+char *s = va_arg(args, char *);
+if (s == NULL)
+{
+write(1, "(null)", 6);
+*count += 6;
 }
-
+else
+{
+while (*s != '\0')
+{
+_putchar(*s);
+s++;
+(*count)++;
+}
+}
+}

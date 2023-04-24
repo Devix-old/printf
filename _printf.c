@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 int count = 0;
 va_list args;
+
 va_start(args, format);
 while (*format != '\0')
 {
@@ -22,16 +23,23 @@ return (-1);
 format++;
 if (*format == ' ')
 {
-_putchar('%');
-while (*format == ' ')
+
+/*while (*format == ' ')
 {
-_putchar(*format);
 count++;
 format++;
+
 if (*(format + 1) == '\0')
 {
 return (-1);
 }
+}
+*/
+
+while (*format == ' ')
+{
+if (*format++ == '\0')
+return (-1);
 }
 }
 process_format(args, &format, &count);

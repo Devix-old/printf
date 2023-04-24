@@ -1,5 +1,11 @@
 #include <stdarg.h>
 #include "main.h"
+/**
+ * _printf - Custom printf function
+ * @format: Format string
+ *
+ * Return: Number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 int count = 0;
@@ -10,29 +16,7 @@ while (*format != '\0')
 if (*format == '%')
 {
 format++;
-switch (*format)
-{
-case 'c':
-print_char(args, &count);
-break;
-case 's':
-print_string(args, &count);
-break;
-case 'd':
-print_integer(args,&count);
-break;
-case 'i':
-print_integer(args,&count);
-break;
-case '%':
-print_percent(args, &count);
-break;
-default:
-_putchar('%');
-_putchar(*format);
-count += 2;
-break;
-}
+process_format(args, &format, &count);
 }
 else
 {

@@ -15,6 +15,10 @@ while (*format != '\0')
 {
 if (*format == '%')
 {
+if (*(format + 1) == '\0')
+{
+return (-1);
+}
 format++;
 process_format(args, &format, &count);
 }

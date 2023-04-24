@@ -28,6 +28,7 @@ while (n > 0)
 {
 buffer[len++] = n % 10 + '0';
 n /= 10;
+(*count)++;
 }
 if (negative)
 {
@@ -37,6 +38,5 @@ buffer[len++] = '-';
 for (i = len - 1; i >= 0; i--)
 {
 _putchar(buffer[i]);
-(*count)++;
 }
 }

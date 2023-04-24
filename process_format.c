@@ -25,7 +25,8 @@ case 'b':
 convert_to_binary(args, count);
 break;
 case '%':
-print_percent(args, count);
+(*count)++;
+_putchar('%');
 break;
 default:
 _putchar('%');

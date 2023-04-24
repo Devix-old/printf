@@ -7,7 +7,7 @@
  */
 void print_integer(va_list args, int *count)
 {
-  int n = va_arg(args, int);
+  long int n = va_arg(args, long int);
   int i;
   char buffer[32];
   int len = 0;

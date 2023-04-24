@@ -20,6 +20,20 @@ if (*(format + 1) == '\0')
 return (-1);
 }
 format++;
+if (*format == ' ')
+{
+_putchar('%');
+while (*format == ' ')
+{
+_putchar(*format);
+count++;
+format++;
+if (*(format + 1) == '\0')
+{
+return (-1);
+}
+}
+}
 process_format(args, &format, &count);
 }
 else

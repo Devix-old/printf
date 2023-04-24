@@ -29,7 +29,7 @@ void print_integer(va_list args, int *count)
     if (n < 0)
     {
       negative = 1;
-      num = (unsigned int)(-n);  // Cast to unsigned int to handle INT_MIN
+      num = (unsigned int)(-n);
     }
     else
     {

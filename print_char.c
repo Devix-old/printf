@@ -10,7 +10,7 @@
  *
  * Return: void
  */
-void print_char(va_list args, int *count)
+void print_char(va_list args, int *count);
 {
 int c = va_arg(args, int)
 _putchar(c);

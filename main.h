@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <limits.h>
 void convert_to_binary(va_list args, int *count);
 int handle_space_case(const char **format, int *count);
 void process_format(va_list args, const char **format, int *count);

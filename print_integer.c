@@ -13,14 +13,16 @@ void print_integer(va_list args, int *count)
 	int n = va_arg(args, int);
 	int i;
 	char buffer[32];
+	char *s = "-2147483648";
 	int len = 0;
 
 	if (n == -2147483648)
 	{
-		snprintf(buffer, sizeof(buffer), "-2147483648");
 		for (i = 0; i < 11; i++)
 		{
-			putchar(buffer[i]);
+
+			_putchar(*s);
+			s++;
 			(*count)++;
 		}
 		return;
@@ -37,6 +39,7 @@ void print_integer(va_list args, int *count)
 	{
 		_putchar('-');
 		n = -n;
+		(*count)++;
 	}
 
 	while (n > 0)

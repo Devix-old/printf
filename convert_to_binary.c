@@ -15,7 +15,11 @@ void convert_to_binary(va_list args, int *count)
 	int i = 0, j, decimal;
 
 	decimal = va_arg(args, int);
-
+	if (decimal == 0)
+	{
+		_putchar('0');
+		(*count)++;
+	}
 	if (decimal < 0)
 	{
 		return;

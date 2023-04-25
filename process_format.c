@@ -18,8 +18,6 @@ case 's':
 print_string(args, count);
 break;
 case 'd':
-print_integer(args, count);
-break;
 case 'i':
 print_integer(args, count);
 break;

@@ -6,7 +6,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <limits.h>
-
+int len_num(int num);
+void hexa(va_list args, int *count);
 void convert_to_binary(va_list args, int *count);
 int handle_space_case(const char **format, int *count);
 void process_format(va_list args, const char **format, int *count);
@@ -16,5 +17,6 @@ void print_percent(va_list args, int *count);
 void print_string(va_list args, int *count);
 void print_char(va_list args, int *count);
 void print_integer(va_list args, int *count);
-
+void print_unsigned_integer(va_list args, int *count);
+void handle_octal(va_list args, int *count);
 #endif

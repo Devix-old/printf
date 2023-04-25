@@ -26,6 +26,16 @@ void process_format(va_list args, const char **format, int *count)
         case 'b':
             convert_to_binary(args, count);
             break;
+        case 'u':
+            print_unsigned_integer(args, count);
+        break;
+        case 'o':
+            handle_octal(args, count);
+            break;
+	case 'x':
+	case 'X':
+	    hexa(args, count);
+	    break;
         case '%':
             (*count)++;
             _putchar('%');

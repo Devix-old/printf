@@ -10,6 +10,6 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <limits.h>
 int main()
 {
-    _printf("%d",-1000);
+    _printf("%d\n",INT_MIN);
     return 0;
 }

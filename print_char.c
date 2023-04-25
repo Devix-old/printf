@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "main.h"
+#include <main.h>
 
 /**
  * print_char - Print a single character
@@ -10,8 +10,7 @@
  *
  * Return: void
  */
-void print_char(va_list args, int *count)
-{
+void print_char(va_list args, int *count){
 int c = va_arg(args, int);
 _putchar(c);
 (*count)++;

@@ -11,26 +11,26 @@
  */
 void convert_to_binary(va_list args, int *count)
 {
-    int binary[32];
-    int i = 0, j, decimal;
+	int binary[32];
+	int i = 0, j, decimal;
 
-    decimal = va_arg(args, int);
+	decimal = va_arg(args, int);
 
-    if (decimal < 0)
-    {
-        return;
-    }
+	if (decimal < 0)
+	{
+		return;
+	}
 
-    while (decimal > 0)
-    {
-        binary[i] = decimal % 2;
-        decimal = decimal / 2;
-        i++;
-    }
+	while (decimal > 0)
+	{
+		binary[i] = decimal % 2;
+		decimal = decimal / 2;
+		i++;
+	}
 
-    for (j = i - 1; j >= 0; j--)
-    {
-        _putchar(binary[j] + '0');
-        (*count)++;
-    }
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(binary[j] + '0');
+		(*count)++;
+	}
 }

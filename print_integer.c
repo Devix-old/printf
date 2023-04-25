@@ -51,5 +51,3 @@ void print_integer(va_list args, int *count)
 		_putchar(buffer[i]);
 	}
 }
-
-

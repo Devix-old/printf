@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_unsigned_integer - Print an unsigned integer
+ * @args: Variable argument list
+ * @count: Pointer to an integer
+ *
+ * Return: void
+ */
 void print_unsigned_integer(va_list args, int *count)
 {
 	long int n = va_arg(args, long int);

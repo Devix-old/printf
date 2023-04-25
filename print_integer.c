@@ -36,7 +36,7 @@ buffer[len++] = num % 10 + '0';
 num /= 10;
 (*count)++;
 }
-if (negative)
+if (negative == 1)
 {
 buffer[len++] = '-';
 }

@@ -17,7 +17,7 @@ void print_integer(va_list args, int *count)
 
 	if (n == -2147483648)
 	{
-		strncpy(buffer, "-2147483648", sizeof(buffer));
+		snprintf(buffer, sizeof(buffer), "-2147483648");
 		for (i = 0; i < 11; i++)
 		{
 			putchar(buffer[i]);

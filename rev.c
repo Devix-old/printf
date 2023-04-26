@@ -10,13 +10,13 @@
 void rev(va_list args, int *count)
 {
 	int len, i;
-	char *c = va_arg(args, char *);
+	char *s = va_arg(args, char *);
 
-	len = strlen(c);
+	len = strlen(s);
 
 	for (i = len - 1; i >= 0; i--)
 	{
 		(*count)++;
-		_putchar(c[i]);
+		_putchar(s[i]);
 	}
 }

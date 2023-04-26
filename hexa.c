@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * hexa - Handles the 'x' and 'X' conversion specifiers.
+ * hexa - Handles the 'X' and 'x' conversion specifiers.
  * @args: The va_list containing the variadic arguments.
  * @count: A pointer to the count of characters printed.
  *

@@ -27,28 +27,24 @@ void print_integer(va_list args, int *count)
 		}
 		return;
 	}
-
 	if (n == 0)
 	{
 		_putchar('0');
 		(*count)++;
 		return;
 	}
-
 	else if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 		(*count)++;
 	}
-
 	while (n > 0)
 	{
 		buffer[len++] = n % 10 + '0';
 		n /= 10;
 		(*count)++;
 	}
-
 	for (i = len - 1; i >= 0; i--)
 	{
 		_putchar(buffer[i]);

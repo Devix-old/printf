@@ -36,6 +36,9 @@ void process_format(va_list args, const char **format, int *count)
 	case 'X':
 		hexa(args, count);
 		break;
+	case 'r':
+		rev(args, count);
+		break;
 	case '%':
 		(*count)++;
 		_putchar('%');

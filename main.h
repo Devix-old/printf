@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <limits.h>
+#include <string.h>
+void rev(va_list args, int *count);
 int len_num(int num);
 void hexa(va_list args, int *count);
 void convert_to_binary(va_list args, int *count);

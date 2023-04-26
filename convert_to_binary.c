@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-
 /**
  * convert_to_binary - Convert decimal to binary and print
  * @args: va_list containing arguments
  * @count: pointer to count of characters printed
- *
  * Return: None
  */
 void convert_to_binary(va_list args, int *count)
@@ -20,18 +18,31 @@ void convert_to_binary(va_list args, int *count)
 		_putchar('0');
 		(*count)++;
 	}
-	if (decimal < 0)
+	else if (decimal < 0)
 	{
-		return;
+		decimal = ~decimal;
+		decimal++;
+		while (decimal > 0)
+		{
+			binary[i] = decimal % 2;
+			decimal = decimal / 2;
+			i++;
+		}
+		while (i < 32)
+		{
+			binary[i] = 1;
+			i++;
+		}
 	}
-
-	while (decimal > 0)
+	else
 	{
-		binary[i] = decimal % 2;
-		decimal = decimal / 2;
-		i++;
+		while (decimal > 0)
+		{
+			binary[i] = decimal % 2;
+			decimal = decimal / 2;
+			i++;
+		}
 	}
-
 	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(binary[j] + '0');
